@@ -10,6 +10,10 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,64 +21,66 @@
 
     <header>
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary px-4">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary px-2 fixed-top">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                aria-label="Toggle navigation"></button>
-            <div class="collapse navbar-coll%apse" id="collapsibleNavId">
+            <div class="right d-flex">
+                <div class="toggle me-3">
+                    <button id="themeToggleBtn" class="btn btn-primary shadow rounded-circle">o</button>
+                </div>
+                <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span> <i class="fas fa-window-close"></i></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">Home <span
-                                class="visually-hidden">(current)</span></a>
+                        <a class="nav-link click" href="#about" data-bs-target=".navbar-collapse.hide">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link click" href="#project" data-bs-target=".navbar-collapse.hide">Project</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Dropdown</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
+                            <a class="dropdown-item" href="#action1" data-bs-toggle="collapse"
+                                data-bs-target=".navbar-collapse.show">Action 1</a>
+                            <a class="dropdown-item" href="#action2" data-bs-toggle="collapse"
+                                data-bs-target=".navbar-collapse.show">Action 2</a>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="toggle">
-                <button id="themeToggleBtn" class="btn btn-primary shadow rounded-circle">o</button>
-            </div>
+
+
         </nav>
 
     </header>
     <main>
-        <div class="container p-2">
-            <div class="about">
-                <div class="row">
-                    <div class="col img">
-                        <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
-                            class="img-fluid rounded" alt="">
-                    </div>
-                    <div class="col text">
+        <div class="container p-2 ">
+            <div class="about vh-100 d-flex justify-content-center align-content-center text-center" id="about">
+                <div class="row  d-flex justify-content-center align-content-center">
+                    <div class="col ">
                         <div class="row">
-                            <h3>This is Albi,</h3>
-                            Someone interested in web development and AIML
+                            <h1 class="typing-h1"></h1>
+                            <p class="typing-p text-muted"></p>
+                            <div class="typing-div text-muted"></div>
                         </div>
                         <div class="row">
-                            <div class="d-grid gap-2">
+                            <div class="g-2">
                                 <button type="button" name="" id="" class="btn btn-outline-primary">Contact Me</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-            <div class="projects p-2 ">
-                <h3>Projects</h3>
+            <div class="projects p-2 " id="project">
+                <h3 class="text-center p-2">PROJECTS</h3>
                 <div class="row g-3">
                     <div class="col-lg-6">
-                        <div class="card shadow border-0 ">
+                        <div class="card shadow border-0 h-100">
                             <div class="card-body ">
                                 <div class="row">
                                     <div class="col border-3 p-3 ms-3">
@@ -110,7 +116,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="card shadow border-0 ">
+                        <div class="card shadow border-0 h-100">
                             <div class="card-body ">
                                 <div class="row">
                                     <div class="col border-3 p-3 ms-3">
@@ -145,9 +151,9 @@
                 </div>
             </div>
 
-            <div class="education">
+            <!-- <div class="education p-4">
                 <h3>Education</h3>
-                <div class="pg row">
+                <div class="pg row shadow-sm rounded my-2 p-2">
                     <div class="col">
                         <div class="name fs-">M. Kumarasamy College of Engineering</div>
                         <div class="address">Karur,Tamilnadu</div>
@@ -156,7 +162,7 @@
                         <div class="percentage">92.0</div>
                     </div>
                 </div>
-                <div class="ug row">
+                <div class="ug row shadow-sm rounded my-2 p-2">
                     <div class="col">
                         <div class="name">Mar Dionysius College</div>
                         <div class="address">Pazhanji, Kerala</div>
@@ -165,7 +171,7 @@
                         <div class="percentage">54.3%</div>
                     </div>
                 </div>
-                <div class="hss row">
+                <div class="hss row shadow-sm rounded my-2 p-2">
                     <div class="col">
                         <div class="name">St. Johns Bethany EHSS</div>
                         <div class="address">Kunnamkulam, Kerla</div>
@@ -174,7 +180,7 @@
                         <div class="percentage">88.0%</div>
                     </div>
                 </div>
-                <div class="hs row">
+                <div class="hs row shadow-sm rounded my-2 p-2">
                     <div class="col">
                         <div class="name">St. M. M. C. H. School</div>
                         <div class="address">Kanippayyur, Kerala</div>
@@ -183,15 +189,22 @@
                         <div class="percentage">90.0%</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="contact">
-
             </div>
         </div>
 
     </main>
     <footer>
         <!-- place footer here -->
+        <div class="row">
+            <div class="col">
+                Thank You
+            </div>
+        </div>
+        <div class="row">
+            <img src="image source" class="img-fluid rounded" alt="">
+        </div>
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -201,7 +214,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
+
     <script>
+        // nav close animation on link click
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll('.click');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    const navbarCollapse = new bootstrap.Collapse(document.getElementById('collapsibleNavId'), {
+                        toggle: false // Don't toggle, just close
+                    });
+
+                    if (navbarCollapse._isShown) {
+                        // Close the collapse menu slowly
+                        navbarCollapse.hide();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        //switch themes
         document.addEventListener("DOMContentLoaded", function () {
             const themeToggleBtn = document.getElementById("themeToggleBtn");
 
@@ -222,6 +256,50 @@
         });
 
     </script>
+
+    <script>
+        //hero name load
+        document.addEventListener("DOMContentLoaded", function () {
+            const h1Output = document.querySelector(".typing-h1");
+            const pOutput = document.querySelector(".typing-p");
+
+            const h1Typed = new Typed(h1Output, {
+                strings: ["Hi there!", "I'm Albin."],
+                typeSpeed: 50, // Typing speed in milliseconds
+                backSpeed: 100, // Backspacing speed in milliseconds
+                startDelay: 100, // Delay before starting the animation
+                backDelay: 3000, // Delay before starting to backspace
+                loop: true, // Loop the animation
+                showCursor: false, // Hide the typing cursor
+            });
+
+            const pTyped = new Typed(pOutput, {
+                strings: [
+                    "I'm a Designer",
+                    "I'm a Developer",
+                    "I build web apps",
+                    "I code with passion",
+                    "I design with purpose",
+                    "I enjoy solving problems",
+                    "I'm a creative thinker",
+                    "I prioritize quality",
+                    "I embrace challenges",
+                    "I'm always curious",
+                    "I'm a team player",
+                    "I love coding"
+                ],
+                typeSpeed: 30, // Typing speed in milliseconds
+                backSpeed: 20, // Backspacing speed in milliseconds
+                startDelay: 0, // No delay before starting the animation
+                backDelay: 1000, // Delay before starting to backspace
+                loop: true, // Loop the animation
+                showCursor: false, // Hide the typing cursor
+            });
+        });
+    </script>
+
+
+
 </body>
 
 </html>

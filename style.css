@@ -1,0 +1,60 @@
+body {
+    font-family: 'Young Serif', serif;
+}
+
+/* Custom X icon container */
+#custom-navbar-toggler {
+    position: fixed;
+    top: 0;
+    right: 15px;
+    width: 44px;
+    /* Adjust the width as needed */
+    height: 44px;
+    /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.custom-toggler-icon::before,
+.custom-toggler-icon::after {
+    content: '';
+    position: absolute;
+    top: 10;
+    width: 24px;
+    /* Adjust the width of the X icon */
+    height: 4px;
+    border-radius: 10px;
+    background-color: #000;
+    /* Adjust the color as needed */
+    transition: transform 0.3s ease;
+}
+
+body.bg-dark .custom-toggler-icon::before,
+body.bg-dark .custom-toggler-icon::after {
+    background-color: #fff;
+    /* Light mode color */
+}
+
+.custom-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+.custom-toggler-icon::after {
+    transform: rotate(-45deg);
+}
+
+/* Animate the X icon when the button is clicked */
+#custom-navbar-toggler.collapsed .custom-toggler-icon::before,
+#custom-navbar-toggler.collapsed .custom-toggler-icon::after {
+    transform: rotate(0deg);
+}
+
+
+.theme-svg {
+    width: 1.8rem;
+    height: auto;
+}

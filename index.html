@@ -13,49 +13,44 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .theme-svg {
-            width: 1.8rem;
-            height: auto;
-        }
-    </style>
+
 </head>
 
 <body class="">
 
     <header>
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary px-2 fixed-top">
-            <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="navbar navbar-expand-sm px-2 fixed-top">
+            <a class="navbar-brand" href="#">Albi</a>
             <div class="right d-flex">
-                <div class="toggle me-3">
-                    <button id="themeToggleBtn" class="btn btn-primary shadow rounded-circle">o</button>
+                <div class="toggle m-auto">
+                    <button id="themeToggleBtn" class="btn  shadow-sm rounded-circle" style="height: 40px;">
+                        <i id="themeIcon" class="fas fa-sun"></i>
+                    </button>
                 </div>
-                <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span> <i class="fas fa-window-close"></i></span>
-                </button>
+
+                <div class="me-5   d-sm-none"> <!-- Hide on small screens -->
+                    <div id="custom-navbar-toggler" class="navbar-toggler border-0 collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <div class="custom-toggler-icon"></div>
+                    </div>
+                </div>
+
             </div>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto ">
                     <li class="nav-item">
-                        <a class="nav-link click" href="#about" data-bs-target=".navbar-collapse.hide">About</a>
+                        <a class="nav-link click" href="#about"
+                            data-bs-target=".navbar-collapse.hide">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link click" href="#project" data-bs-target=".navbar-collapse.hide">Project</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#action1" data-bs-toggle="collapse"
-                                data-bs-target=".navbar-collapse.show">Action 1</a>
-                            <a class="dropdown-item" href="#action2" data-bs-toggle="collapse"
-                                data-bs-target=".navbar-collapse.show">Action 2</a>
-                        </div>
+                        <a class="nav-link click" href="#project"
+                            data-bs-target=".navbar-collapse.hide">Project</a>
                     </li>
                 </ul>
             </div>
@@ -69,8 +64,8 @@
             <div class="about vh-100 d-flex justify-content-center align-content-center text-center" id="about">
                 <div class="row  d-flex justify-content-center align-content-center">
                     <div class="col ">
-                        <div class="row">
-                            <h1 class="typing-h1"></h1>
+                        <div class="row" >
+                            <h1 class="typing-h1" style="font-size: 50px"></h1>
                             <p class="typing-p text-muted"></p>
                             <div class="typing-div text-muted"></div>
                         </div>
@@ -167,7 +162,7 @@
         <!-- place footer here -->
         <div class="foot p-2">
             <div class="text-center">
-                    <h2>Check my social medias</h2>
+                <h2>Check my social medias</h2>
 
             </div>
             <div class="row justify-content-center g-3 p-2">
@@ -241,8 +236,30 @@
     <script>
         // Function to toggle theme
         function toggleTheme() {
+
             const body = document.body;
-            body.classList.toggle("bg-dark");
+            const navbar = document.querySelector(".navbar");
+            const themeIcon = document.getElementById("themeIcon");
+
+            if (body.classList.contains("bg-dark")) {
+                // Switch to light theme and moon icon
+                body.classList.remove("bg-dark");
+                navbar.classList.remove("bg-dark");
+                body.classList.add("bg-light");
+                navbar.classList.add("bg-light");
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+            } else {
+                // Switch to dark theme and sun icon
+                body.classList.remove("bg-light");
+                navbar.classList.remove("bg-light");
+                body.classList.add("bg-dark");
+                navbar.classList.add("bg-dark");
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+            }
+
+            // body.classList.toggle("bg-dark");
             body.classList.toggle("text-light");
 
             // You can also toggle other Bootstrap classes as needed.
@@ -250,6 +267,7 @@
             cards.forEach(card => {
                 card.classList.toggle("bg-dark");
             });
+
 
             // Toggle SVG color
             const themeSvgs = document.querySelectorAll(".theme-svg");
@@ -281,7 +299,7 @@
             const pOutput = document.querySelector(".typing-p");
 
             const h1Typed = new Typed(h1Output, {
-                strings: ["Hi there!", "I'm Albin."],
+                strings: ["Hi there!", "I'm Albin","Albin George C J"],
                 typeSpeed: 50, // Typing speed in milliseconds
                 backSpeed: 100, // Backspacing speed in milliseconds
                 startDelay: 100, // Delay before starting the animation
@@ -297,7 +315,7 @@
                     "I build web apps.",
                 ],
                 typeSpeed: 30, // Typing speed in milliseconds
-                backSpeed: 20, // Backspacing speed in milliseconds
+                backSpeed: 40, // Backspacing speed in milliseconds
                 startDelay: 0, // No delay before starting the animation
                 backDelay: 1000, // Delay before starting to backspace
                 loop: true, // Loop the animation

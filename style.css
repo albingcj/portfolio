@@ -1,16 +1,10 @@
-body {
-    font-family: 'Young Serif', serif;
-}
-
 /* Custom X icon container */
 #custom-navbar-toggler {
     position: fixed;
     top: 0;
     right: 15px;
     width: 44px;
-    /* Adjust the width as needed */
-    height: 44px;
-    /* Adjust the height as needed */
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +24,7 @@ body {
     border-radius: 10px;
     background-color: #000;
     /* Adjust the color as needed */
-    transition: transform 0.3s ease;
+    transition: transform .5s ease;
 }
 
 body.bg-dark .custom-toggler-icon::before,
@@ -40,11 +34,11 @@ body.bg-dark .custom-toggler-icon::after {
 }
 
 .custom-toggler-icon::before {
-    transform: rotate(45deg);
+    transform: rotate(42deg);
 }
 
 .custom-toggler-icon::after {
-    transform: rotate(-45deg);
+    transform: rotate(-42deg);
 }
 
 /* Animate the X icon when the button is clicked */
@@ -54,7 +48,72 @@ body.bg-dark .custom-toggler-icon::after {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* Define initial styles for the icons */
+#themeIcon {
+    transition: transform 1s ease;
+    /* Apply the transition to the 'transform' property */
+}
+
+/* When the button is clicked and the dark mode is active */
+body.bg-dark #themeIcon {
+    transform: rotate(360deg);
+    /* Rotate the icon */
+}
+
+
+
+
+/* carousal */
+.carousel-container {
+    width: 300px; /* Adjust the width as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    width: 300px; /* Adjust the width as needed */
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 300px; /* Adjust the item width as needed */
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    display: none; /* Initially hide all items */
+}
+
+.carousel-item.active {
+    display: block; /* Show the active item */
+}
+
+
+
+
 .theme-svg {
     width: 1.8rem;
+    height: auto;
+}
+
+.theme-svg2 {
+    width: 2.8rem;
     height: auto;
 }

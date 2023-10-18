@@ -12,7 +12,6 @@
 }
 
 
-
 .custom-toggler-icon::before,
 .custom-toggler-icon::after {
     content: '';
@@ -50,15 +49,6 @@ body.bg-dark .custom-toggler-icon::after {
 
 
 
-
-
-
-
-
-
-
-
-
 /* Define initial styles for the icons */
 #themeIcon {
     transition: transform 1s ease;
@@ -73,47 +63,75 @@ body.bg-dark #themeIcon {
 
 
 
-
-/* carousal */
-.carousel-container {
-    width: 300px; /* Adjust the width as needed */
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel {
-    width: 300px; /* Adjust the width as needed */
-    overflow: hidden;
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    flex: 0 0 300px; /* Adjust the item width as needed */
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
-    display: none; /* Initially hide all items */
-}
-
-.carousel-item.active {
-    display: block; /* Show the active item */
-}
-
-
-
-
 .theme-svg {
     width: 1.8rem;
     height: auto;
 }
 
 .theme-svg2 {
-    width: 2.8rem;
+    width: 10vw;
     height: auto;
 }
+
+.about{
+    position: relative;
+
+}
+.circle{
+    position: absolute;
+    top: 40vh;
+    opacity: .5;
+    /* background-color: beige; */
+}
+.x {
+    /* width: 0px; */
+    height: 10vw;
+    position: absolute;
+    opacity: 0.5;
+    animation: rotation 40s linear infinite;
+  }
+  
+  .mysql {
+    animation-delay: -5s;
+  }
+  
+  .vscode {
+    animation-delay: -10s;
+  }
+  
+  .python {
+    animation-delay: -15s;
+  }
+  
+  .xampp {
+    animation-delay: -20s;
+  }
+  
+  .html {
+    animation-delay: -25s;
+  }
+  
+  .aws {
+    animation-delay: -30s;
+  }
+  
+  .php {
+    animation-delay: -35s;
+  }
+  
+  .bootstrap {
+    animation-delay: -40s;
+  }
+  
+  @keyframes rotation {
+    0% {
+        transform: rotate(0deg) translateY(-40vw);
+
+    }
+  
+    100% {
+        transform: rotate(360deg) translateY(-40vw);
+
+    }
+  }
+  

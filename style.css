@@ -1,49 +1,49 @@
 /* Custom X icon container */
 #custom-navbar-toggler {
-    position: fixed;
-    top: 0;
-    right: 15px;
-    width: 44px;
-    height: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 15px;
+  width: 44px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .custom-toggler-icon::before,
 .custom-toggler-icon::after {
-    content: '';
-    position: absolute;
-    top: 10;
-    width: 24px;
-    /* Adjust the width of the X icon */
-    height: 4px;
-    border-radius: 10px;
-    background-color: #000;
-    /* Adjust the color as needed */
-    transition: transform .5s ease;
+  content: '';
+  position: absolute;
+  top: 10;
+  width: 24px;
+  /* Adjust the width of the X icon */
+  height: 4px;
+  border-radius: 10px;
+  background-color: #000;
+  /* Adjust the color as needed */
+  transition: transform .5s ease;
 }
 
 body.bg-dark .custom-toggler-icon::before,
 body.bg-dark .custom-toggler-icon::after {
-    background-color: #fff;
-    /* Light mode color */
+  background-color: #fff;
+  /* Light mode color */
 }
 
 .custom-toggler-icon::before {
-    transform: rotate(42deg);
+  transform: rotate(42deg);
 }
 
 .custom-toggler-icon::after {
-    transform: rotate(-42deg);
+  transform: rotate(-42deg);
 }
 
 /* Animate the X icon when the button is clicked */
 #custom-navbar-toggler.collapsed .custom-toggler-icon::before,
 #custom-navbar-toggler.collapsed .custom-toggler-icon::after {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 
@@ -51,87 +51,60 @@ body.bg-dark .custom-toggler-icon::after {
 
 /* Define initial styles for the icons */
 #themeIcon {
-    transition: transform 1s ease;
-    /* Apply the transition to the 'transform' property */
+  transition: transform 1s ease;
+  /* Apply the transition to the 'transform' property */
 }
 
 /* When the button is clicked and the dark mode is active */
 body.bg-dark #themeIcon {
-    transform: rotate(360deg);
-    /* Rotate the icon */
+  transform: rotate(360deg);
+  /* Rotate the icon */
 }
 
 
 
 .theme-svg {
-    width: 1.8rem;
-    height: auto;
+  width: 1.8rem;
+  height: auto;
 }
 
 .theme-svg2 {
-    width: 10vw;
-    height: auto;
+  width: calc(5vh + 2vw);
+  height: auto;
 }
 
-.about{
-    position: relative;
+
+.about {
+  position: relative;
 
 }
-.circle{
-    position: absolute;
-    top: 40vh;
-    opacity: .5;
-    /* background-color: beige; */
+
+
+:root {
+  --radial-inner-color-light: #212529; /* Inner part (black) for light theme */
+  --radial-outer-color-light:#f8f9fa; /* Outer part (white) for light theme */
+  
+  --radial-inner-color-dark:#f8f9fa; /* Inner part (white) for dark theme */
+  --radial-outer-color-dark: #212529; /* Outer part (black) for dark theme */
 }
-.x {
-    /* width: 0px; */
-    height: 10vw;
-    position: absolute;
-    opacity: 0.5;
-    animation: rotation 40s linear infinite;
-  }
-  
-  .mysql {
-    animation-delay: -5s;
-  }
-  
-  .vscode {
-    animation-delay: -10s;
-  }
-  
-  .python {
-    animation-delay: -15s;
-  }
-  
-  .xampp {
-    animation-delay: -20s;
-  }
-  
-  .html {
-    animation-delay: -25s;
-  }
-  
-  .aws {
-    animation-delay: -30s;
-  }
-  
-  .php {
-    animation-delay: -35s;
-  }
-  
-  .bootstrap {
-    animation-delay: -40s;
-  }
-  
-  @keyframes rotation {
-    0% {
-        transform: rotate(0deg) translateY(-40vw);
 
-    }
-  
-    100% {
-        transform: rotate(360deg) translateY(-40vw);
+/* Styles for the flashlight */
+#flashlight {
+  --Xpos: 50vw;
+  --Ypos: 50vh;
+}
 
-    }
-  }
-  
+#flashlight:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 9em at var(--Xpos) var(--Ypos),
+    var(--radial-inner-color-light), /* Inner part (black or white) */
+    var(--radial-outer-color-light) /* Outer part (white or black) */
+  );
+}
+

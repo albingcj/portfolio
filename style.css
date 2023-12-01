@@ -1,10 +1,19 @@
+.blur-overlay {
+  /* width: 100vw; */
+  backdrop-filter: blur(2px); /* Adjust the blur amount as needed */
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  z-index: 1;
+}
+
+
+
 /* Custom X icon container */
 #custom-navbar-toggler {
-  position: fixed;
+  /* position: relative;
   top: 0;
-  right: 15px;
+  right: 15px; */
   width: 44px;
-  height: 70px;
+  height: 44px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,30 +90,17 @@ body.bg-dark #themeIcon {
 
 
 :root {
-  --radial-inner-color-light: #212529; /* Inner part (black) for light theme */
-  --radial-outer-color-light:#f8f9fa; /* Outer part (white) for light theme */
-  
-  --radial-inner-color-dark:#f8f9fa; /* Inner part (white) for dark theme */
-  --radial-outer-color-dark: #212529; /* Outer part (black) for dark theme */
+  --radial-inner-color-light: #8000ff; /* Inner part (black) for light theme */
+  --radial-outer-color-light:#9d4718; /* Outer part (white) for light theme */
 }
 
-/* Styles for the flashlight */
 #flashlight {
-  --Xpos: 50vw;
-  --Ypos: 50vh;
-}
-
-#flashlight:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
   position: absolute;
-  pointer-events: none;
-  background: radial-gradient(
-    circle 9em at var(--Xpos) var(--Ypos),
-    var(--radial-inner-color-light), /* Inner part (black or white) */
-    var(--radial-outer-color-light) /* Outer part (white or black) */
-  );
+  z-index: -1;
+  width: 150px; 
+  height: 150px; 
+  background-color: var(--radial-inner-color-light); 
+  /* //change the blend mode  */
+  /* mix-blend-mode: multiply;  */
+  border-radius: 50%;
 }
-

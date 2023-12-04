@@ -1,3 +1,27 @@
+// navbar readjust
+document.addEventListener('DOMContentLoaded', function () {
+    var navbarToggler = document.getElementById('custom-navbar-toggler');
+    var navbar = document.querySelector('.navbar');
+    var body = document.body;
+
+    navbarToggler.addEventListener('click', function () {
+        if (navbar.classList.contains('fixed-bottom')) {
+            // Remove the fixed-height-from-bottom class to revert to default positioning
+            navbar.classList.remove('fixed-bottom');
+        } else {
+            // Add the fixed-height-from-bottom class for the fixed height from the bottom
+            navbar.classList.add('fixed-bottom');
+        }
+    });
+});
+
+
+
+
+
+
+
+
 
 let mouseX = 0;
 let mouseY = 0;

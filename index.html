@@ -464,41 +464,65 @@
             </div>
           </div>
         </div>
-        
-        <nav class="navbar navbar-expand-sm p-3 bg-white border sticky-top justify-content-evenly shadow bg-body-tertiary"
-        style="font-family: 'Young Serif', serif; top: 10px">
-        <div class="container-fluid">
+
+        <nav
+          class="navbar navbar-expand-sm p-3 bg-white border sticky-top justify-content-evenly shadow bg-body-tertiary"
+          style="font-family: 'Young Serif', serif; top: 10px"
+        >
+          <div class="container-fluid">
             <div class="toggle">
-                <button id="themeToggleBtn" class="btn shadow-sm rounded-circle" style="height: 40px">
-                    <i id="themeIcon" class="fas fa-sun"></i>
-                </button>
+              <button
+                id="themeToggleBtn"
+                class="btn shadow-sm rounded-circle"
+                style="height: 40px"
+              >
+                <i id="themeIcon" class="fas fa-sun"></i>
+              </button>
             </div>
             <div class="brand d-flex align-items-center mx-4">
-                <a class="navbar-brand m-auto" href="#">Albi</a>
+              <a class="navbar-brand m-auto" href="#">Albi</a>
             </div>
-            <button class="navbar-toggler border-0 shadow-none collapsed d-sm-none" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation" id="custom-navbar-toggler">
-                <div class="custom-toggler-icon"></div>
+            <button
+              class="navbar-toggler border-0 shadow-none collapsed d-sm-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              id="custom-navbar-toggler"
+            >
+              <div class="custom-toggler-icon"></div>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav text-center justify-content-center me-sm-4">
-                    <li class="nav-item">
-                        <a class="nav-link click" href="#about" data-bs-target=".navbar-collapse.hide">
-                            <div class="col-auto">About</div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link click" href="#project" data-bs-target=".navbar-collapse.hide">Projects</a>
-                    </li>
-                </ul>
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav text-center justify-content-center me-sm-4">
+                <li class="nav-item">
+                  <a
+                    class="nav-link click"
+                    href="#about"
+                    data-bs-target=".navbar-collapse.hide"
+                  >
+                    <div class="col-auto">About</div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link click"
+                    href="#project"
+                    data-bs-target=".navbar-collapse.hide"
+                    >Projects</a
+                  >
+                </li>
+              </ul>
             </div>
-        </div>
-    </nav>
+          </div>
+        </nav>
         <div class="blur-overlay p-2 sticky-top"></div>
 
-      
-        <div class="projects mt-4" id="project">
+        <div class="projects mt-4 border" id="project">
           <h3 class="text-center p-2" style="font-family: 'Young Serif', serif">
             PROJECTS
           </h3>
@@ -509,7 +533,7 @@
           >
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="5000">
-                <div class="card bg-light border rounded-0 h-100">
+                <div class="card border-0 bg-light rounded-0 h-100">
                   <div
                     class="card-body d-flex jalign-items-center p-3 p-lg-2 p-xl-3"
                   >
@@ -586,7 +610,7 @@
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="5000">
-                <div class="card bg-light border rounded-0 h-100">
+                <div class="card border-0 bg-light rounded-0 h-100">
                   <div
                     class="card-body d-flex jalign-items-center p-3 p-lg-2 p-xl-3"
                   >
@@ -685,7 +709,9 @@
     <footer class="container p-2 mb-3">
       <div class="border">
         <div class="foot p-2" style="font-family: 'Young Serif', serif">
-          <div class="text-center mb-3 d-flex justify-content-center align-items-center flex-column">
+          <div
+            class="text-center mb-3 d-flex justify-content-center align-items-center flex-column"
+          >
             <div class="row mb-3">
               <div class="col">
                 <h2>Lets Talk Business</h2>
@@ -812,24 +838,6 @@
       </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var navbarToggler = document.getElementById('custom-navbar-toggler');
-
-            navbarToggler.addEventListener('click', function () {
-                var navbar = document.querySelector('.navbar');
-                var navbarHeight = navbar.clientHeight;
-
-                if (navbar.classList.contains('show')) {
-                    // Scroll to the top of the navbar
-                    window.scrollTo({
-                        top: navbar.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
     <script src="index.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -844,5 +852,22 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbarToggler = document.getElementById('custom-navbar-toggler');
+            var navbar = document.querySelector('.navbar');
+            var body = document.body;
+
+            navbarToggler.addEventListener('click', function () {
+                if (navbar.classList.contains('fixed-bottom')) {
+                    // Remove the fixed-height-from-bottom class to revert to default positioning
+                    navbar.classList.remove('fixed-bottom');
+                } else {
+                    // Add the fixed-height-from-bottom class for the fixed height from the bottom
+                    navbar.classList.add('fixed-bottom');
+                }
+            });
+        });
+    </script>
   </body>
 </html>

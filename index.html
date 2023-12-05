@@ -16,14 +16,23 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"
       rel="stylesheet"
@@ -31,6 +40,10 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -225,7 +238,6 @@
                   </button> -->
                   <a
                     href="#contact"
-                    target="_blank"
                     rel="noopener noreferrer"
                     type="button"
                     name=""
@@ -719,39 +731,44 @@
     <footer class="container p-2 mb-3" id="contact">
       <div class="border">
         <div class="foot p-2" style="font-family: 'Young Serif', serif">
-          <div
-            class="text-center mb-3 d-flex justify-content-center align-items-center flex-column"
-          >
-            <div class="row mb-3">
-              <div class="col">
-                <h2>Lets Talk Business</h2>
+          <form id="myForm">
+            <div
+              class="text-center mb-3 d-flex justify-content-center align-items-center flex-column"
+            >
+              <div class="row mb-3">
+                <div class="col">
+                  <h2>Lets Talk Business</h2>
+                </div>
+              </div>
+              <div class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control bg-transparent rounded-0 shadow-none"
+                    name=""
+                    id="fullName"
+                    aria-describedby="emailHelpId"
+                    placeholder="Name"
+                  />
+                </div>
+              </div>
+              <div class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="col">
+                  <input
+                    type="email"
+                    class="form-control bg-transparent rounded-0 shadow-none"
+                    name=""
+                    id="email_id"
+                    aria-describedby="emailHelpId"
+                    placeholder="mymail@mail.com"
+                  />
+                </div>
+              </div>
+              <div class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
-            <div class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6">
-              <div class="col">
-                <input
-                  type="text"
-                  class="form-control bg-transparent rounded-0 shadow-none"
-                  name=""
-                  id=""
-                  aria-describedby="emailHelpId"
-                  placeholder="Name"
-                />
-              </div>
-            </div>
-            <div class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6">
-              <div class="col">
-                <input
-                  type="email"
-                  class="form-control bg-transparent rounded-0 shadow-none"
-                  name=""
-                  id=""
-                  aria-describedby="emailHelpId"
-                  placeholder="mymail@mail.com"
-                />
-              </div>
-            </div>
-          </div>
+          </form>
 
           <div class="row justify-content-center g-3 p-2">
             <!-- github logo -->
@@ -822,6 +839,7 @@
                 </g>
               </svg>
             </div>
+            <!-- leetcode  -->
             <div class="col-auto">
               <a href="https://leetcode.com/albingcj/">
                 <svg
@@ -866,5 +884,17 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("Y9es4BKO74MEDlEEA");
+      })();
+    </script>
   </body>
 </html>

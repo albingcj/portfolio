@@ -45,7 +45,7 @@ function getMousePosition(e) {
     const flashlightHeight = flashlight.offsetHeight;
 
     // Adjust the position to be under the mouse pointer
-    let adjustedLeft = mouseX - flashlightWidth ;
+    let adjustedLeft = mouseX - flashlightWidth;
     let adjustedTop = mouseY - flashlightHeight / 2;
 
     // Check if the flashlight is too close to the right edge
@@ -196,3 +196,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+// email js
+$('#myForm').on('submit', function (event) {
+    event.preventDefault(); // prevent reload
+    // Create an instance of Notyf
+
+    var notyf = new Notyf();
+    var formData = new FormData(this);
+    formData.append('service_id', 'service_devq4ha');
+    formData.append('template_id', 'template_jeklhxe');
+    formData.append('user_id', 'Y9es4BKO74MEDlEEA');
+
+    $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+        type: 'POST',
+        data: formData,
+        contentType: false, // auto-detection
+        processData: false // no need to parse formData to string
+    }).done(function () {
+        // Display a success notification
+        notyf.success({
+            message: 'Yep! Got it 😊',
+            ripple: true,
+            position: {
+                x: 'center',
+                y: 'bottom',
+            },
+            duration: 2000
+        })
+    }).fail(function (error) {
+
+        // Display an error notification
+        notyf.error({
+            message: 'Oops! Something went wrong.',
+            ripple: true,
+            position: {
+                x: 'center',
+                y: 'bottom',
+            },
+            duration: 2000,
+            icon: false
+        })
+    });
+});

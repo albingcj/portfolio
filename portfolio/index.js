@@ -215,6 +215,8 @@ $('#myForm').on('submit', function (event) {
         processData: false // no need to parse formData to string
     }).done(function () {
         // Display a success notification
+        $('#myForm')[0].reset();
+
         notyf.success({
             message: 'Yep! Got it 😊',
             ripple: true,
@@ -226,6 +228,7 @@ $('#myForm').on('submit', function (event) {
         })
     }).fail(function (error) {
         // Display an error notification
+        $('#myForm')[0].reset();
         notyf.error({
             message: 'Oops! Something went wrong.',
             ripple: true,

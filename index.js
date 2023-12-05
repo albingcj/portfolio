@@ -225,7 +225,6 @@ $('#myForm').on('submit', function (event) {
             duration: 2000
         })
     }).fail(function (error) {
-
         // Display an error notification
         notyf.error({
             message: 'Oops! Something went wrong.',

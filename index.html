@@ -488,7 +488,7 @@
         </div>
 
         <nav
-          class="navbar navbar-expand-sm p-3 bg-white border sticky-top justify-content-evenly shadow bg-body-tertiary"
+          class="navbar navbar-expand-sm p-3 bg-light border sticky-top justify-content-evenly shadow bg-body-tertiary"
           style="font-family: 'Young Serif', serif; top: 10px"
         >
           <div class="container-fluid">
@@ -545,7 +545,10 @@
         <div class="blur-overlay p-2 sticky-top"></div>
 
         <div class="projects mt-4 border" id="project">
-          <h3 class="text-center p-2" style="font-family: 'Young Serif', serif">
+          <h3
+            class="text-center p-2 mt-4"
+            style="font-family: 'Young Serif', serif"
+          >
             PROJECTS
           </h3>
           <div
@@ -726,6 +729,105 @@
             </button>
           </div>
         </div>
+
+
+        <div class="container border mt-3 py-3">
+          <ul class="nav nav-tabs border-0" id="schoolTabs" role="tablist">
+            <li class="nav-item col text-center" role="presentation">
+              <a
+                class="nav-link bg-transparent rounded-0 active"
+                id="school1-tab"
+                data-bs-toggle="tab"
+                href="#school1"
+                role="tab"
+                aria-controls="school1"
+                aria-selected="true"
+                >PG</a
+              >
+            </li>
+            <li class="nav-item col text-center" role="presentation">
+              <a
+                class="nav-link bg-transparent rounded-0"
+                id="school2-tab"
+                data-bs-toggle="tab"
+                href="#school2"
+                role="tab"
+                aria-controls="school2"
+                aria-selected="false"
+                >UG</a
+              >
+            </li>
+            <li class="nav-item col text-center" role="presentation">
+              <a
+                class="nav-link bg-transparent rounded-0"
+                id="school3-tab"
+                data-bs-toggle="tab"
+                href="#school3"
+                role="tab"
+                aria-controls="school3"
+                aria-selected="false"
+                >HSS</a
+              >
+            </li>
+            <li class="nav-item col text-center" role="presentation">
+              <a
+                class="nav-link bg-transparent rounded-0"
+                id="school4-tab"
+                data-bs-toggle="tab"
+                href="#school4"
+                role="tab"
+                aria-controls="school4"
+                aria-selected="false"
+                >HSC</a
+              >
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div
+              class="tab-pane fade p-3 show active"
+              id="school1"
+              role="tabpanel"
+              aria-labelledby="school1-tab"
+            >
+              <!-- School 1 Details -->
+              <p>Master of Computer Applications</p>
+              <p>M. Kumarasamy College of Engineering</p>
+              <p>Karur</p>
+            </div>
+            <div
+              class="tab-pane fade p-3"
+              id="school2"
+              role="tabpanel"
+              aria-labelledby="school2-tab"
+            >
+              <!-- School 2 Details -->
+              <p>Bachelor of Science ( Physics )</p>
+              <p>Mar Dionysius College</p>
+              <p>Pazhanji</p>
+            </div>
+            <div
+              class="tab-pane fade p-3"
+              id="school3"
+              role="tabpanel"
+              aria-labelledby="school3-tab"
+            >
+              <!-- School 3 Details -->
+              <p>Bethany St. Johns E. H. S. S</p>
+              <p>Kunnamkulam</p>
+            </div>
+            <div
+              class="tab-pane fade p-3"
+              id="school4"
+              role="tabpanel"
+              aria-labelledby="school4-tab"
+            >
+              <!-- School 4 Details -->
+              <p>School 4 Details Here...</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </main>
     <footer class="container p-2 mb-3" id="contact">
@@ -735,7 +837,7 @@
             <div
               class="text-center mb-3 d-flex justify-content-center align-items-center flex-column"
             >
-              <div class="row mb-3">
+              <div class="row my-3">
                 <div class="col">
                   <h2>Lets Talk Business</h2>
                 </div>
@@ -744,7 +846,7 @@
                 <div class="col">
                   <input
                     type="text"
-                    class="form-control bg-transparent rounded-0 shadow-none"
+                    class="form-control bg-transparent rounded-0 shadow-none text-primary"
                     name=""
                     id="fullName"
                     aria-describedby="emailHelpId"
@@ -757,7 +859,7 @@
                 <div class="col">
                   <input
                     type="email"
-                    class="form-control bg-transparent rounded-0 shadow-none"
+                    class="form-control bg-transparent rounded-0 shadow-none text-primary"
                     name=""
                     id="email_id"
                     aria-describedby="emailHelpId"
@@ -766,8 +868,15 @@
                   />
                 </div>
               </div>
-              <div class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6 justify-content-center ">
-                <button type="submit" class="btn btn-outline-primary rounded-0 col-10">Submit</button>
+              <div
+                class="row p-2 col-12 col-sm-10 col-md-8 col-lg-6 justify-content-center"
+              >
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary rounded-0 col-10"
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </form>

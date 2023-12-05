@@ -83,7 +83,7 @@ function toggleTheme() {
         heroButton.classList.add("btn-outline-dark");
 
         navbar.classList.remove("bg-dark");
-        navbar.classList.add("bg-white");
+        navbar.classList.add("bg-light");
         navBrand.classList.remove("text-light"); // Add bg-light class
         navBrand.classList.add("text-dark"); // Remove bg-dark class
         themeIcon.classList.remove("text-light");
@@ -100,7 +100,7 @@ function toggleTheme() {
         heroButton.classList.remove("btn-outline-dark");
         heroButton.classList.add("btn-outline-light");
 
-        navbar.classList.remove("bg-white");
+        navbar.classList.remove("bg-light");
         navbar.classList.add("bg-dark");
         navBrand.classList.add("text-light"); // Remove bg-light class
         navBrand.classList.remove("text-dark"); // Add bg-dark class

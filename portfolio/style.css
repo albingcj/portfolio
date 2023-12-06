@@ -5,6 +5,7 @@
 
 
 
+
 /* Custom X icon container */
 #custom-navbar-toggler {
   /* position: relative;
@@ -88,17 +89,41 @@ body.bg-dark #themeIcon {
 
 
 :root {
-  --radial-inner-color-light: #8000ff; /* Inner part (black) for light theme */
-  --radial-outer-color-light:#9d4718; /* Outer part (white) for light theme */
+  --radial-inner-color-light: #8000ff;
+  /* Inner part (black) for light theme */
+  --radial-outer-color-light: #9d4718;
+  /* Outer part (white) for light theme */
+}
+
+@keyframes rippleFlashlight {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.1) rotate(45deg);
+  }
+
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.1) rotate(-45deg);
+  }
 }
 
 #flashlight {
   position: absolute;
   z-index: -1;
-  width: 150px; 
-  height: 150px; 
-  background-color: var(--radial-inner-color-light); 
-  /* //change the blend mode  */
-  /* mix-blend-mode: multiply;  */
+  width: 150px;
+  height: 150px;
+  background-color: var(--radial-inner-color-light);
   border-radius: 50%;
+
+  /* Animation properties */
+  animation-name: rippleFlashlight;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; /* Repeat the animation infinitely */
 }

@@ -129,9 +129,9 @@ function toggleTheme() {
         body.classList.remove("text-light");
 
         colorshiftElements.forEach((element) => {
-                element.classList.remove("bg-dark");
-                element.classList.add("bg-light");
-            
+            element.classList.remove("bg-dark");
+            element.classList.add("bg-light");
+
         });
 
         heroButton.classList.remove("btn-outline-light");
@@ -152,9 +152,9 @@ function toggleTheme() {
         body.classList.add("bg-dark");
 
         colorshiftElements.forEach((element) => {
-                element.classList.remove("bg-light");
-                element.classList.add("bg-dark");
-            
+            element.classList.remove("bg-light");
+            element.classList.add("bg-dark");
+
         });
 
         heroButton.classList.remove("btn-outline-dark");
@@ -218,15 +218,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const systemTheme = checkSystemTheme();
 
+    // Check if the current theme is different from the system theme
+    if ((systemTheme === "dark" && document.body.classList.contains("bg-light")) ||
+        (systemTheme === "light" && document.body.classList.contains("bg-dark"))) {
+        toggleTheme(); // Apply the theme if needed
+    }
+});
 
-
+function checkSystemTheme() {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDarkScheme ? "dark" : "light";
+}
 
 
 
 
 //hero name load
 document.addEventListener("DOMContentLoaded", function () {
+
+
     const h1Output = document.querySelector(".typing-h1");
     const pOutput = document.querySelector(".typing-p");
 

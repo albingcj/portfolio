@@ -1,9 +1,7 @@
-.blur-overlay {
-  /* width: 100vw; */
-  backdrop-filter: blur(2px); /* Adjust the blur amount as needed */
-  /* background-color: rgba(0, 0, 0, 0.3); */
+/* .blur-overlay {
+  backdrop-filter: blur(2px); 
   z-index: 1;
-}
+} */
 
 
 

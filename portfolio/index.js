@@ -18,6 +18,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// let mouseX = 0;
+// let mouseY = 0;
+
+// const flashlight = document.getElementById("flashlight");
+// const heroDiv = document.getElementById("about"); // Add the ID of your hero div here
+
+// const isTouchDevice = () => {
+//     try {
+//         document.createEvent("TouchEvent");
+//         return true;
+//     } catch (e) {
+//         return false;
+//     }
+// };
+
+// function getMousePosition(e) {
+//     mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+//     mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
+
+//     const flashlightWidth = flashlight.offsetWidth;
+//     const flashlightHeight = flashlight.offsetHeight;
+
+//     // Check if the mouse position is within the boundaries of the hero div
+//     const heroRect = heroDiv.getBoundingClientRect();
+//     if (
+//         mouseX >= heroRect.left &&
+//         mouseX <= heroRect.right &&
+//         mouseY >= heroRect.top &&
+//         mouseY <= heroRect.bottom
+//     ) {
+//         // Adjust the position to be under the mouse pointer
+//         let adjustedLeft = mouseX - flashlightWidth;
+//         let adjustedTop = mouseY - flashlightHeight / 2;
+
+//         // Check if the flashlight is too close to the right edge
+//         const maxRight = heroRect.right - flashlightWidth;
+//         if (adjustedLeft > maxRight) {
+//             adjustedLeft = maxRight;
+//         }
+
+//         flashlight.style.left = adjustedLeft + "px";
+//         flashlight.style.top = adjustedTop + "px";
+//     }
+// }
+
+// // Add an event listener to the hero div
+// heroDiv.addEventListener("mousemove", getMousePosition);
+// heroDiv.addEventListener("touchmove", getMousePosition);
 
 
 
@@ -73,11 +121,18 @@ function toggleTheme() {
     const themeIcon = document.getElementById("themeIcon");
     const navBrand = document.querySelector(".navbar-brand"); // Use querySelector to select the element with the class "navbar-brand"
     const heroButton = document.querySelector("#hero-btn");
+    const colorshiftElements = document.querySelectorAll(".colorshift");
     if (body.classList.contains("bg-dark")) {
         // Switch to light theme and moon icon
         body.classList.remove("bg-dark");
         body.classList.add("bg-light");
         body.classList.remove("text-light");
+
+        colorshiftElements.forEach((element) => {
+                element.classList.remove("bg-dark");
+                element.classList.add("bg-light");
+            
+        });
 
         heroButton.classList.remove("btn-outline-light");
         heroButton.classList.add("btn-outline-dark");
@@ -96,6 +151,11 @@ function toggleTheme() {
         body.classList.add("text-light");
         body.classList.add("bg-dark");
 
+        colorshiftElements.forEach((element) => {
+                element.classList.remove("bg-light");
+                element.classList.add("bg-dark");
+            
+        });
 
         heroButton.classList.remove("btn-outline-dark");
         heroButton.classList.add("btn-outline-light");

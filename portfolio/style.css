@@ -9,7 +9,7 @@
 
 }
 
-img{
+img {
   cursor: pointer;
 }
 
@@ -131,13 +131,18 @@ body.bg-dark #themeIcon {
 
 
 @keyframes glow {
-  0%, 100% {
-    fill: #212529; /* Light Red/Pink for Black Background */
-    filter: drop-shadow(0 0 6px rgba(49, 49, 49, 0.7)) brightness(120%);
+
+  0%,
+  100% {
+    fill: #212529;
+    /* Light Red/Pink for Black Background */
+    filter: drop-shadow(0 0 6px rgba(33, 37, 41, 255, 0.9)) brightness(120%);
   }
+
   50% {
-    fill: #f8f9fa; /* Light Blue for White Background */
-    filter: drop-shadow(0 0 6px rgba(219, 226, 212, 0.5)) brightness(150%);
+    fill: #f8f9fa;
+    /* Light Blue for White Background */
+    filter: drop-shadow(0 0 6px rgba(248, 249, 250, 255, 0.9)) brightness(150%);
   }
 }
 
@@ -187,6 +192,3 @@ body.bg-dark #themeIcon {
   /* Center the flashlight on the mouse pointer */
   transform: translate(-50%, -50%);
 }
-
-
-

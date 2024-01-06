@@ -120,7 +120,10 @@ function toggleTheme() {
     const themeIcon = document.getElementById("themeIcon");
     const navBrand = document.querySelector(".navbar-brand"); // Use querySelector to select the element with the class "navbar-brand"
     const heroButton = document.querySelector("#hero-btn");
+    const btns = document.querySelectorAll(".btn");
+    const modals = document.querySelectorAll(".modal-content");
     const colorshiftElements = document.querySelectorAll(".colorshift");
+    // console.log(modals, colorshiftElements);
     if (body.classList.contains("bg-dark")) {
         // Switch to light theme and moon icon
         body.classList.remove("bg-dark");
@@ -131,6 +134,15 @@ function toggleTheme() {
             element.classList.remove("bg-dark");
             element.classList.add("bg-light");
 
+        });
+        btns.forEach((btn)=>{
+            btn.classList.remove("btn-outline-light");
+            btn.classList.add("btn-outline-dark")
+        });
+        modals.forEach((modal)=>{
+            // console.log(modal);
+            modal.classList.add("bg-light");
+            modal.classList.remove("bg-dark");
         });
 
         heroButton.classList.remove("btn-outline-light");
@@ -154,6 +166,15 @@ function toggleTheme() {
             element.classList.remove("bg-light");
             element.classList.add("bg-dark");
 
+        });
+        btns.forEach((btn)=>{
+            btn.classList.remove("btn-outline-dark");
+            btn.classList.add("btn-outline-light")
+        });
+        modals.forEach((modal)=>{
+            // console.log(modal);
+            modal.classList.add("bg-dark");
+            modal.classList.remove("bg-light");
         });
 
         heroButton.classList.remove("btn-outline-dark");

@@ -35,7 +35,7 @@ console.log(`
 │ https://open.spotify.com/track/4JtvyWkWQTPVcroZf8JJkp │
 └───────────────────────────────────────────────────────┘
 `);
-                           
+
 
 
 
@@ -60,59 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// let mouseX = 0;
-// let mouseY = 0;
-
-// const flashlight = document.getElementById("flashlight");
-// const heroDiv = document.getElementById("about"); // Add the ID of your hero div here
-
-// const isTouchDevice = () => {
-//     try {
-//         document.createEvent("TouchEvent");
-//         return true;
-//     } catch (e) {
-//         return false;
-//     }
-// };
-
-// function getMousePosition(e) {
-//     mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
-//     mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
-
-//     const flashlightWidth = flashlight.offsetWidth;
-//     const flashlightHeight = flashlight.offsetHeight;
-
-//     // Check if the mouse position is within the boundaries of the hero div
-//     const heroRect = heroDiv.getBoundingClientRect();
-//     if (
-//         mouseX >= heroRect.left &&
-//         mouseX <= heroRect.right &&
-//         mouseY >= heroRect.top &&
-//         mouseY <= heroRect.bottom
-//     ) {
-//         // Adjust the position to be under the mouse pointer
-//         let adjustedLeft = mouseX - flashlightWidth;
-//         let adjustedTop = mouseY - flashlightHeight / 2;
-
-//         // Check if the flashlight is too close to the right edge
-//         const maxRight = heroRect.right - flashlightWidth;
-//         if (adjustedLeft > maxRight) {
-//             adjustedLeft = maxRight;
-//         }
-
-//         flashlight.style.left = adjustedLeft + "px";
-//         flashlight.style.top = adjustedTop + "px";
-//     }
-// }
-
-// // Add an event listener to the hero div
-// heroDiv.addEventListener("mousemove", getMousePosition);
-// heroDiv.addEventListener("touchmove", getMousePosition);
-
-
-
-
-
 let mouseX = 0;
 let mouseY = 0;
 
@@ -131,26 +78,36 @@ function getMousePosition(e) {
     mouseX = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
     mouseY = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
 
-    const flashlightWidth = flashlight.offsetWidth;
-    const flashlightHeight = flashlight.offsetHeight;
+    // console.log(mouseX, mouseY, window.innerWidth, window.innerHeight);
+    // Calculate the adjusted position to center the flashlight on the mouse pointer
+    const adjustedLeft = mouseX - (flashlight.offsetWidth / 2);
+    const adjustedTop = mouseY;
 
-    // Adjust the position to be under the mouse pointer
-    let adjustedLeft = mouseX - flashlightWidth;
-    let adjustedTop = mouseY - flashlightHeight / 2;
+    // Check if the adjusted position is within the window bounds
+    const maxLeft = 0;
+    const maxTop = 0;
+    const maxRight = window.innerWidth - flashlight.offsetWidth;
+    const maxBottom = window.innerHeight - flashlight.offsetHeight;
 
-    // Check if the flashlight is too close to the right edge
-    const maxRight = window.innerWidth - flashlightWidth;
-    if (adjustedLeft > maxRight) {
-        adjustedLeft = maxRight;
+    if (
+        adjustedLeft >= maxLeft &&
+        adjustedLeft <= maxRight &&
+        adjustedTop >= maxTop &&
+        adjustedTop <= maxBottom
+    ) {
+        // If within bounds, update the position and make it visible
+        flashlight.style.left = adjustedLeft + "px";
+        flashlight.style.top = adjustedTop + "px";
+    } else {
+        // If outside bounds, make it invisible
+        flashlight.style.left = "-9999px"; // Move it off-screen
     }
-
-    flashlight.style.left = adjustedLeft + "px";
-    flashlight.style.top = adjustedTop + "px";
 }
+
+
 
 document.addEventListener("mousemove", getMousePosition);
 document.addEventListener("touchmove", getMousePosition);
-
 
 
 
@@ -270,6 +227,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+
+
+
 function checkSystemTheme() {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     return prefersDarkScheme ? "dark" : "light";
@@ -356,3 +316,43 @@ $('#myForm').on('submit', function (event) {
         })
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    let count = 0;
+
+    // Assuming you have multiple elements with the theme-svg2 class
+    const themeSvg2List = document.querySelectorAll('.theme-svg2');
+
+    // Event listener for each theme-svg2 element
+    themeSvg2List.forEach(function (themeSvg2) {
+        const svgPaths = themeSvg2.querySelectorAll("path");
+        const body = document.body;
+
+        themeSvg2.addEventListener('click', function () {
+            
+            // Check if the entire SVG is clicked (not any specific path)
+            if (!themeSvg2.classList.contains("clicked")) {
+                count++;
+                console.log(count);
+                themeSvg2.classList.add("clicked");
+
+                // Iterate through each path and update the style
+                svgPaths.forEach(path => {
+                    if (body.classList.contains("bg-dark")) {
+                        path.style.fill = "#f8f9fa"; // Dark theme, SVG path is white
+                        path.style.animation = "glow 4s infinite";
+                    } else {
+                        path.style.fill = "#212529"; // Light theme, SVG path is black
+                        path.style.animation = "glow 4s infinite";
+                    }
+                });
+            }
+        });
+    });
+});
+
+
+
+

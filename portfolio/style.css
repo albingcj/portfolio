@@ -1,3 +1,14 @@
+:root {
+  --radial-inner-color-light: #8000ff;
+  /* Inner part (black) for light theme */
+  --radial-outer-color-light: #9d4718;
+  /* Outer part (white) for light theme */
+  --cursor-size: 32px;
+  --icon-path: url('icons/plus-circle.svg');
+
+
+}
+
 /* .blur-overlay {
   backdrop-filter: blur(2px); 
   z-index: 1;
@@ -79,7 +90,33 @@ body.bg-dark #themeIcon {
 .theme-svg2 {
   width: calc(5vh + 2vw);
   height: auto;
+  /* background-color: red; */
+  cursor: cell;
 }
+
+
+
+#custom-cursor {
+  position: absolute;
+  width: var(--cursor-size);
+  height: auto;
+  background: var(--icon-path) no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.theme-svg2:hover #custom-cursor {
+  background-color: #fff;  /* Change to your desired background color */
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+
 
 
 .about {
@@ -88,28 +125,45 @@ body.bg-dark #themeIcon {
 }
 
 
-:root {
-  --radial-inner-color-light: #8000ff;
-  /* Inner part (black) for light theme */
-  --radial-outer-color-light: #9d4718;
-  /* Outer part (white) for light theme */
+
+@keyframes glow {
+  0%, 100% {
+    fill: #c38a5b; /* Light Red/Pink for Black Background */
+    filter: drop-shadow(0 0 6px rgba(199, 111, 57, 0.7)) brightness(120%);
+  }
+  50% {
+    fill: #2374a9; /* Light Blue for White Background */
+    filter: drop-shadow(0 0 6px rgba(33, 95, 137, 0.5)) brightness(150%);
+  }
 }
 
+
+
+
+
+
+
+
+
+
+
 @keyframes rippleFlashlight {
-  0%, 100% {
-    transform: scale(1) rotate(0deg);
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 
   25% {
-    transform: scale(1.1) rotate(45deg);
+    transform: translate(-50%, -50%) scale(1.1);
   }
 
   50% {
-    transform: scale(1) rotate(0deg);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   75% {
-    transform: scale(1.1) rotate(-45deg);
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
 
@@ -125,5 +179,10 @@ body.bg-dark #themeIcon {
   animation-name: rippleFlashlight;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; /* Repeat the animation infinitely */
+  animation-iteration-count: infinite;
+  /* Center the flashlight on the mouse pointer */
+  transform: translate(-50%, -50%);
 }
+
+
+
